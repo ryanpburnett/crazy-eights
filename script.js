@@ -32,3 +32,18 @@ for (i = 0; i < 5; i++) {
     p2.push(deck.pop());
 }
 
+// game
+let discard = [];
+let topCard;
+
+const playGame = () => {
+    const newCard = () => {
+        if (deck.length > 0) {
+            discard.push(topCard);
+            topCard = deck.pop()
+        }else{
+            deck.push(discard);
+        }
+    }
+    newCard();
+}
